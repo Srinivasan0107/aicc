@@ -16,6 +16,7 @@ if st.button("Predict"):
     pred = model.predict([[sl, sw, pl, pw]])
     flowers = ["Setosa", "Versicolor", "Virginica"]
     st.success(f"Predicted Flower: {flowers[pred[0]]}")
+
 iris = load_iris()
 X = iris.data
 y = iris.target
@@ -34,11 +35,11 @@ ax.scatter(
 
 # Highlight predicted sample
 ax.scatter(
-    sepal_length,
-    petal_length,
+    sl,
+    pl,
     color="red",
     s=200,
-    label="Prediction"
+    label="Current Input"
 )
 
 # Labels
